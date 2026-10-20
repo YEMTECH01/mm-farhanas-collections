@@ -11,13 +11,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials, request) {
-        const cookieHeader =
-          typeof request?.headers?.get === "function"
-            ? request.headers.get("cookie")
-            : typeof request?.headers?.cookie === "string"
-              ? request.headers.cookie
-              : "";
-
+        const cookieHeader = request?.headers?.get("cookie") ?? "";
         const { username, password } = getStoredAdminCredentials(cookieHeader);
 
         if (
