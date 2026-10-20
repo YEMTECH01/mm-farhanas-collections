@@ -24,11 +24,11 @@ export default function Navbar() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-5 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-baseline gap-2 z-50">
-          <span className="font-serif text-3xl tracking-wide text-luxury-dark">
-            MM
+          <span className="font-serif text-2xl lg:text-3xl tracking-wide text-luxury-dark">
+            MM FARHANA'S
           </span>
-          <span className="font-serif text-3xl tracking-[0.2em] text-luxury-dark">
-            LUXURY
+          <span className="font-serif text-2xl lg:text-3xl tracking-[0.1em] text-luxury-dark">
+            COLLECTIONS
           </span>
         </Link>
 
