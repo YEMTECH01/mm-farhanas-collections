@@ -20,16 +20,26 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="w-full bg-luxury-beige relative">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-5 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-baseline gap-2 z-50">
-          <span className="font-serif text-2xl lg:text-3xl tracking-wide text-luxury-dark">
-            MM FARHANA'S
-          </span>
-          <span className="font-serif text-2xl lg:text-3xl tracking-[0.1em] text-luxury-dark">
-            COLLECTIONS
-          </span>
+    <header className="w-full bg-luxury-beige relative z-50 border-b border-luxury-gold/20">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-4 flex items-center justify-between">
+        {/* 🏷️ THE UNIQUE LOGO DESIGN */}
+        <Link href="/" className="group flex items-center z-50">
+          <div className="flex items-stretch">
+            {/* "MM" part - Dark Background */}
+            <div className="bg-luxury-dark text-luxury-gold px-3 py-2 font-serif text-xl lg:text-2xl tracking-widest font-bold">
+              MM
+            </div>
+
+            {/* "FARHANA'S" part - Gold Background with unique cut-out shape */}
+            <div className="bg-luxury-gold text-white px-3 py-2 font-serif text-xl lg:text-2xl tracking-wide font-bold relative -ml-1 group-hover:bg-black transition-colors duration-300">
+              FARHANA'S
+            </div>
+
+            {/* "COLLECTIONS" part - Outline style */}
+            <div className="border border-luxury-dark text-luxury-dark px-3 py-2 text-xs lg:text-sm tracking-[0.2em] font-sans flex items-center -ml-1 group-hover:border-luxury-gold group-hover:text-luxury-gold transition-colors duration-300 hidden sm:flex">
+              COLLECTIONS
+            </div>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
@@ -42,7 +52,7 @@ export default function Navbar() {
                 href={link.href}
                 className={`text-sm tracking-wide transition-colors ${
                   isActive
-                    ? "text-luxury-dark border-b border-luxury-gold pb-1"
+                    ? "text-luxury-dark font-bold border-b-2 border-luxury-gold pb-1"
                     : "text-luxury-dark/80 hover:text-luxury-gold"
                 }`}
               >
@@ -54,7 +64,6 @@ export default function Navbar() {
 
         {/* Icons & Mobile Toggle */}
         <div className="flex items-center gap-6 z-50">
-          {/* SEARCH ICON (Links to Collections page) */}
           <Link
             href="/collections"
             aria-label="Search"
@@ -62,8 +71,6 @@ export default function Navbar() {
           >
             <Search size={20} strokeWidth={1.5} />
           </Link>
-
-          {/* USER ICON (Links to Admin Login) */}
           <Link
             href="/admin/login"
             aria-label="Account"
@@ -71,8 +78,6 @@ export default function Navbar() {
           >
             <User size={20} strokeWidth={1.5} />
           </Link>
-
-          {/* CART ICON */}
           <button
             onClick={toggleCart}
             aria-label="Cart"
@@ -80,13 +85,12 @@ export default function Navbar() {
           >
             <ShoppingBag size={20} strokeWidth={1.5} />
             {items.length > 0 && (
-              <span className="absolute -top-1 -right-2 bg-luxury-gold text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center">
+              <span className="absolute -top-1 -right-2 bg-luxury-gold text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center font-bold">
                 {items.length}
               </span>
             )}
           </button>
 
-          {/* Hamburger Button (Mobile Only) */}
           <button
             className="lg:hidden text-luxury-dark"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -105,13 +109,14 @@ export default function Navbar() {
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
               className={`text-lg tracking-wide ${
-                pathname === link.href ? "text-luxury-gold" : "text-luxury-dark"
+                pathname === link.href
+                  ? "text-luxury-gold font-bold"
+                  : "text-luxury-dark"
               }`}
             >
               {link.name}
             </Link>
           ))}
-          {/* Mobile Search & User links */}
           <div className="flex gap-6 mt-2 pt-4 border-t border-luxury-gold/20 w-full justify-center">
             <Link
               href="/collections"
