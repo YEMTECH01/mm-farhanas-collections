@@ -8,15 +8,27 @@
     "start": "next start"
   },
   "dependencies": {
+    "@libsql/client": "^0.18.0",
+    "@prisma/adapter-libsql": "^7.10.1",
+    "@prisma/client": "^6.19.3",
+    "dotenv": "^18.0.8",
     "next": "16.4.1",
+    "next-auth": "5.0.0-beta.32",
+    "prisma": "^6.19.3",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "zustand": "^5.0.15"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
     "@tailwindcss/turbopack": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "autoprefixer": "^10.6.1",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "lucide-react": "^1.57.0",
+    "postcss": "^8.5.30",
     "tailwindcss": "^4",
     "typescript": "^5"
   },
