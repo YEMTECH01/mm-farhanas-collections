@@ -1,19 +1,97 @@
+@config "../../tailwind.config.ts";
 @import "tailwindcss";
 
 @theme {
-  --color-luxury-beige: #f4efe6;
-  --color-luxury-gold: #c5a059;
-  --color-luxury-dark: #1a1a1a;
-  --color-luxury-gray: #e5e0d8;
-  --color-luxury-cream: #faf7f2;
+  --color-ink: #0b0b0c;
+  --color-ivory: #f6f1e7;
+  --color-sand: #e9dfcb;
+  --color-gold: #c9a96e;
+  --color-gold-deep: #a8864a;
+  --color-gold-sheen: #d7b77a;
 
-  --font-serif: "Playfair Display", serif;
-  --font-sans: "Inter", sans-serif;
+  --color-luxury-beige: #f6f1e7;
+  --color-luxury-cream: #f9f5ef;
+  --color-luxury-dark: #0b0b0c;
+  --color-luxury-gold: #c9a96e;
+  --color-luxury-gray: #d9d0c3;
+
+  --font-serif: var(--font-playfair), serif;
+  --font-sans: var(--font-inter), sans-serif;
+
+  --radius-DEFAULT: 2px;
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 2px;
+}
+
+:root {
+  --background: #f6f1e7;
+  --foreground: #0b0b0c;
 }
 
 body {
-  background-color: var(--color-luxury-beige);
-  color: var(--color-luxury-dark);
-  margin: 0;
-  padding: 0;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  /* Paper grain texture */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* Fluid Typography */
+h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+/* Utility Classes */
+.label-sm {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  color: rgba(11, 11, 12, 0.7);
+}
+
+.border-hairline {
+  border-width: 1px;
+  border-color: rgba(201, 169, 110, 0.3);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+}
+
+@supports (scrollbar-width: none) {
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+}
+
+/* Minimum touch target for mobile */
+button,
+a {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Remove focus outline on click, but keep for keyboard */
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible) {
+  outline: none;
 }

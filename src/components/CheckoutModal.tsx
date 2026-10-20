@@ -48,7 +48,7 @@ export default function CheckoutModal() {
       .join("%0A"); // %0A is the WhatsApp code for a new line
 
     const message =
-      `*NEW ORDER - MM LUXURY*%0A%0A` +
+      `*NEW ORDER - MM | FARHANA'S*%0A%0A` +
       `*Customer Details:*%0A` +
       `👤 Name: ${formData.name}%0A` +
       `📞 Phone: ${formData.phone}%0A` +

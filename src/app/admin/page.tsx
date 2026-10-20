@@ -26,138 +26,149 @@ export default async function AdminDashboard() {
   const pendingOrders = allOrders.filter((o) => o.status === "Pending").length;
 
   return (
-    <div className="max-w-6xl mx-auto">
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-serif text-luxury-dark">
+    <div className="mx-auto max-w-6xl">
+      <div className="mb-8 flex items-end justify-between gap-4">
+        <h1 className="font-serif text-[clamp(3.2rem,6vw,8rem)] leading-[0.9] tracking-[-0.05em] text-luxury-dark">
           Dashboard Overview
         </h1>
-        <p className="text-gray-500 text-sm">Welcome back, Admin</p>
+        <p className="text-sm uppercase tracking-[0.2em] text-luxury-dark/60">
+          Welcome back, Admin
+        </p>
       </div>
 
-      {/* Top Metric Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-        {/* Total Revenue */}
-        <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 flex items-start justify-between">
+      <div className="mb-10 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className="flex items-start justify-between rounded-[1.4rem] border border-[#dfe3db] bg-[#f8f7f5] p-5 shadow-[0_1px_0_rgba(0,0,0,0.02)]">
           <div>
-            <h3 className="text-gray-500 text-sm font-medium mb-1">
+            <h3 className="mb-3 text-[0.9rem] font-medium text-luxury-dark/70">
               Total Revenue
             </h3>
-            <p className="text-3xl font-serif text-luxury-dark">
+            <p className="font-serif text-[2.3rem] leading-none tracking-[-0.05em] text-luxury-dark">
               ₦{totalRevenue.toLocaleString()}
             </p>
           </div>
-          <div className="bg-green-100 p-3 rounded-full text-green-600">
-            <DollarSign size={24} />
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#cfead6] text-[#1c3c2e]">
+            <DollarSign size={22} />
           </div>
         </div>
 
-        {/* Total Orders */}
-        <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 flex items-start justify-between">
+        <div className="flex items-start justify-between rounded-[1.4rem] border border-[#dfe3db] bg-[#f8f7f5] p-5 shadow-[0_1px_0_rgba(0,0,0,0.02)]">
           <div>
-            <h3 className="text-gray-500 text-sm font-medium mb-1">
+            <h3 className="mb-3 text-[0.9rem] font-medium text-luxury-dark/70">
               Total Orders
             </h3>
-            <p className="text-3xl font-serif text-luxury-dark">
+            <p className="font-serif text-[2.3rem] leading-none tracking-[-0.05em] text-luxury-dark">
               {allOrders.length}
             </p>
           </div>
-          <div className="bg-blue-100 p-3 rounded-full text-blue-600">
-            <FileText size={24} />
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#dfeafb] text-[#334d7a]">
+            <FileText size={22} />
           </div>
         </div>
 
-        {/* Pending Orders */}
-        <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 flex items-start justify-between">
+        <div className="flex items-start justify-between rounded-[1.4rem] border border-[#dfe3db] bg-[#f8f7f5] p-5 shadow-[0_1px_0_rgba(0,0,0,0.02)]">
           <div>
-            <h3 className="text-gray-500 text-sm font-medium mb-1">
+            <h3 className="mb-3 text-[0.9rem] font-medium text-luxury-dark/70">
               Pending Orders
             </h3>
-            <p className="text-3xl font-serif text-luxury-dark">
+            <p className="font-serif text-[2.3rem] leading-none tracking-[-0.05em] text-luxury-dark">
               {pendingOrders}
             </p>
           </div>
-          <div className="bg-yellow-100 p-3 rounded-full text-yellow-600">
-            <Clock size={24} />
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#f4e9b8] text-[#7a6600]">
+            <Clock size={22} />
           </div>
         </div>
 
-        {/* Total Products */}
-        <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 flex items-start justify-between">
+        <div className="flex items-start justify-between rounded-[1.4rem] border border-[#dfe3db] bg-[#f8f7f5] p-5 shadow-[0_1px_0_rgba(0,0,0,0.02)]">
           <div>
-            <h3 className="text-gray-500 text-sm font-medium mb-1">
+            <h3 className="mb-3 text-[0.9rem] font-medium text-luxury-dark/70">
               Total Products
             </h3>
-            <p className="text-3xl font-serif text-luxury-dark">
+            <p className="font-serif text-[2.3rem] leading-none tracking-[-0.05em] text-luxury-dark">
               {productCount}
             </p>
           </div>
-          <div className="bg-purple-100 p-3 rounded-full text-purple-600">
-            <ShoppingBag size={24} />
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#e7d8f8] text-[#5f3a8a]">
+            <ShoppingBag size={22} />
           </div>
         </div>
       </div>
 
-      {/* Recent Orders Table */}
-      <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-        <div className="p-6 border-b border-gray-200 flex justify-between items-center">
-          <h2 className="text-xl font-serif text-luxury-dark">Recent Orders</h2>
+      <div className="overflow-hidden rounded-[1.5rem] border border-[#dfe3db] bg-[#f8f7f5]">
+        <div className="flex items-center justify-between border-b border-[#dfe3db] px-6 py-5">
+          <h2 className="font-serif text-[clamp(2.4rem,4vw,4rem)] leading-[0.9] tracking-[-0.06em] text-luxury-dark">
+            Recent Orders
+          </h2>
           <Link
             href="/admin/orders"
-            className="text-sm text-luxury-gold hover:underline flex items-center gap-1"
+            className="flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-luxury-dark/70 transition-colors hover:text-luxury-gold"
           >
             View All <ArrowRight size={14} />
           </Link>
         </div>
 
-        <table className="w-full text-left">
-          <thead className="bg-gray-50 border-b">
-            <tr>
-              <th className="p-4 font-medium text-gray-600">Customer</th>
-              <th className="p-4 font-medium text-gray-600">Date</th>
-              <th className="p-4 font-medium text-gray-600">Total</th>
-              <th className="p-4 font-medium text-gray-600">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {recentOrders.length === 0 ? (
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[700px] text-left">
+            <thead className="border-b border-[#dfe3db] bg-[#f1f1ee]">
               <tr>
-                <td colSpan={4} className="p-8 text-center text-gray-500">
-                  No orders yet. They will appear here when customers checkout.
-                </td>
+                <th className="p-4 text-left text-sm font-medium uppercase tracking-[0.12em] text-luxury-dark/70">
+                  Customer
+                </th>
+                <th className="p-4 text-left text-sm font-medium uppercase tracking-[0.12em] text-luxury-dark/70">
+                  Date
+                </th>
+                <th className="p-4 text-left text-sm font-medium uppercase tracking-[0.12em] text-luxury-dark/70">
+                  Total
+                </th>
+                <th className="p-4 text-left text-sm font-medium uppercase tracking-[0.12em] text-luxury-dark/70">
+                  Status
+                </th>
               </tr>
-            ) : (
-              recentOrders.map((order) => (
-                <tr
-                  key={order.id}
-                  className="border-b last:border-0 hover:bg-gray-50"
-                >
-                  <td className="p-4 font-medium">{order.name}</td>
-                  <td className="p-4 text-gray-500 text-sm">
-                    {new Date(order.createdAt).toLocaleDateString()}
-                  </td>
-                  <td className="p-4 font-serif">
-                    ₦{order.total.toLocaleString()}
-                  </td>
-                  <td className="p-4">
-                    <span
-                      className={`text-xs font-bold px-2 py-1 rounded ${
-                        order.status === "Pending"
-                          ? "bg-yellow-100 text-yellow-800"
-                          : order.status === "Paid"
-                            ? "bg-blue-100 text-blue-800"
-                            : order.status === "Shipped"
-                              ? "bg-purple-100 text-purple-800"
-                              : "bg-green-100 text-green-800"
-                      }`}
-                    >
-                      {order.status}
-                    </span>
+            </thead>
+            <tbody>
+              {recentOrders.length === 0 ? (
+                <tr>
+                  <td colSpan={4} className="p-8 text-center text-gray-500">
+                    No orders yet. They will appear here when customers
+                    checkout.
                   </td>
                 </tr>
-              ))
-            )}
-          </tbody>
-        </table>
+              ) : (
+                recentOrders.map((order) => (
+                  <tr
+                    key={order.id}
+                    className="border-b border-[#e7e4df] last:border-0 hover:bg-white/60"
+                  >
+                    <td className="p-4 text-base font-medium text-luxury-dark">
+                      {order.name}
+                    </td>
+                    <td className="p-4 text-sm text-luxury-dark/70">
+                      {new Date(order.createdAt).toLocaleDateString()}
+                    </td>
+                    <td className="p-4 font-serif text-xl text-luxury-dark">
+                      ₦{order.total.toLocaleString()}
+                    </td>
+                    <td className="p-4">
+                      <span
+                        className={`inline-flex rounded-md border px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] ${
+                          order.status === "Pending"
+                            ? "border-[#eadc7f] bg-[#f7f0c9] text-[#7a6600]"
+                            : order.status === "Paid"
+                              ? "border-[#b0cfe6] bg-[#dfeefb] text-[#295a84]"
+                              : order.status === "Shipped"
+                                ? "border-[#dcc8f2] bg-[#efe4fb] text-[#5e3b8d]"
+                                : "border-[#c7e7d2] bg-[#dff3e6] text-[#1e5d3e]"
+                        }`}
+                      >
+                        {order.status}
+                      </span>
+                    </td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

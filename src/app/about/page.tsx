@@ -11,9 +11,9 @@ export default function AboutPage() {
             Our Story
           </h1>
           <p className="text-lg text-luxury-dark/80 leading-relaxed mb-6">
-            MM LUXURY is a premier fashion destination located in Abuja,
-            Nigeria. We specialize in high-quality, modest elegance, dealing in
-            all kinds of abayas.
+            MM | FARHANA'S COLLECTIONS is a premier fashion destination located
+            in Abuja, Nigeria. We specialize in high-quality, modest elegance,
+            dealing in all kinds of abayas.
           </p>
           <p className="text-lg text-luxury-dark/80 leading-relaxed">
             Whether you are shopping for Dubai, Egyptian, Morocco, or Turkey

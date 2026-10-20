@@ -2,6 +2,7 @@ import { prisma } from "@/lib/prisma";
 import CollectionCard from "@/components/home/CollectionCard";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FloatingSocials from "@/components/FloatingSocials";
 
 export default async function CollectionsPage() {
   const products = await prisma.product.findMany();
@@ -9,26 +10,27 @@ export default async function CollectionsPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-luxury-beige py-16">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <h1 className="font-serif text-5xl text-luxury-dark text-center mb-12">
-            All Collections
-          </h1>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <main className="min-h-screen bg-ivory pt-28 pb-16">
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-10">
+          <h1 className="text-center text-ink mb-12">All Collections</h1>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-10">
             {products.map((product) => (
-              <CollectionCard
-                key={product.id}
+              <CollectionCard 
+                key={product.id} 
                 id={product.id}
                 title={product.name}
                 subtitle={product.description}
-                items={1}
+                price={product.price}
                 image={product.image}
+                stock={5} 
               />
             ))}
           </div>
         </div>
       </main>
       <Footer />
+      <FloatingSocials />
     </>
   );
 }
