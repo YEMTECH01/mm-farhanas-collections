@@ -11,9 +11,11 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials, request) {
-        // Cast request as any to bypass NextAuth beta type mismatch
-        const req = request as any;
-        const cookieHeader = req?.headers?.get("cookie") ?? "";
+        // Safely extract the cookie header
+        let cookieHeader = "";
+        if (request && request.headers) {
+          cookieHeader = request.headers.get("cookie") || "";
+        }
 
         const { username, password } = getStoredAdminCredentials(cookieHeader);
 
