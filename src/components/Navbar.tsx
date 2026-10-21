@@ -35,18 +35,18 @@ export default function Navbar() {
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8 flex items-center justify-between">
           <Link
             href="/"
-            className="z-50 inline-flex items-center rounded-full border border-[#d9cbb2] bg-[#f6f1e7]/40 px-3 py-1.5 shadow-[0_0_0_1px_rgba(217,203,178,0.18)] transition-colors group hover:border-gold-deep"
+            className="z-50 inline-flex max-w-full items-center rounded-full border border-[#d9cbb2] bg-[#f6f1e7]/40 px-2 py-1.5 shadow-[0_0_0_1px_rgba(217,203,178,0.18)] transition-colors group hover:border-gold-deep sm:px-3"
           >
-            <div className="flex flex-col items-center leading-none">
-              <div className="flex items-center gap-2">
-                <span className="font-serif text-xl lg:text-2xl tracking-[0.08em] font-black text-ink transition-colors group-hover:text-gold-deep">
+            <div className="flex max-w-full flex-col items-center leading-none">
+              <div className="flex flex-col items-center gap-0.5 sm:flex-row sm:items-center sm:gap-1.5 lg:gap-2">
+                <span className="font-serif text-[0.7rem] tracking-[0.03em] font-black text-ink transition-colors group-hover:text-gold-deep sm:text-[0.9rem] lg:text-2xl lg:tracking-[0.08em]">
                   MM |
                 </span>
-                <span className="font-serif text-xl lg:text-2xl tracking-[0.12em] font-black text-ink transition-colors group-hover:text-gold-deep">
+                <span className="font-serif text-[0.68rem] tracking-[0.05em] font-black text-ink transition-colors group-hover:text-gold-deep sm:text-[0.85rem] lg:text-2xl lg:tracking-[0.12em]">
                   FARHANA'S
                 </span>
               </div>
-              <span className="mt-1 font-serif text-[9px] lg:text-[10px] uppercase tracking-[0.28em] text-ink/70 transition-colors group-hover:text-gold-deep">
+              <span className="mt-1 font-serif text-[6px] uppercase tracking-[0.18em] text-ink/70 transition-colors group-hover:text-gold-deep sm:text-[9px] lg:text-[10px] lg:tracking-[0.28em]">
                 Collections
               </span>
             </div>
@@ -117,21 +117,21 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[60] flex h-[100dvh] flex-col bg-[#f4efe7]"
+            className="fixed inset-0 z-[60] flex h-[100dvh] flex-col bg-[#f4efe7] shadow-[0_0_0_1px_rgba(217,203,178,0.8),0_0_22px_rgba(217,203,178,0.45),0_0_46px_rgba(217,203,178,0.24)]"
           >
             <div className="flex items-center justify-between px-4 pb-3 pt-4">
               <div className="flex-1 min-w-0">
-                <div className="inline-flex w-full max-w-[calc(100%-52px)] items-center justify-center rounded-full border border-[#d9cbb2] bg-[#f7f1e8]/60 px-3 py-2 shadow-[0_0_0_1px_rgba(217,203,178,0.18)]">
-                  <div className="flex flex-col items-center leading-none">
-                    <div className="flex items-center justify-center gap-2 text-ink">
-                      <span className="font-serif text-[clamp(1.4rem,4vw,2.6rem)] font-black tracking-[0.08em]">
+                <div className="inline-flex w-full max-w-[calc(100%-52px)] items-center justify-center rounded-full border border-[#d9cbb2] bg-[#f7f1e8]/60 px-2 py-2 shadow-[0_0_0_1px_rgba(217,203,178,0.18)] sm:px-3">
+                  <div className="flex max-w-full flex-col items-center leading-none">
+                    <div className="flex flex-col items-center justify-center gap-0.5 text-ink sm:flex-row sm:gap-2">
+                      <span className="font-serif text-[0.8rem] font-black tracking-[0.03em] sm:text-[1.05rem]">
                         MM |
                       </span>
-                      <span className="font-serif text-[clamp(1.25rem,3.5vw,2.15rem)] font-black tracking-[0.12em]">
+                      <span className="font-serif text-[0.75rem] font-black tracking-[0.06em] sm:text-[0.95rem]">
                         FARHANA'S
                       </span>
                     </div>
-                    <span className="mt-1 font-serif text-[9px] uppercase tracking-[0.34em] text-ink/70">
+                    <span className="mt-1 font-serif text-[6px] uppercase tracking-[0.18em] text-ink/70 sm:text-[7px]">
                       Collections
                     </span>
                   </div>
