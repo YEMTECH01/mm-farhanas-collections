@@ -33,7 +33,7 @@ export default function CartDrawer() {
         onClick={toggleCart}
       />
 
-      <aside className="relative z-10 flex h-full w-full max-w-md flex-col bg-ivory shadow-2xl">
+      <aside className="relative z-10 flex h-[100dvh] w-full max-w-md flex-col overflow-hidden bg-ivory shadow-2xl">
         <div className="flex items-center justify-between border-b border-hairline px-5 py-4">
           <div>
             <p className="text-[10px] uppercase tracking-[0.3em] text-ink/50">
@@ -51,7 +51,7 @@ export default function CartDrawer() {
           </button>
         </div>
 
-        <div className="flex-1 overflow-y-auto px-5 py-5">
+        <div className="flex-1 overflow-y-auto px-5 py-5 pb-24">
           {items.length === 0 ? (
             <div className="flex h-full flex-col items-center justify-center text-center text-ink/60">
               <ShoppingBag size={32} className="mb-3" />
@@ -126,7 +126,7 @@ export default function CartDrawer() {
           )}
         </div>
 
-        <div className="border-t border-hairline bg-ivory p-5">
+        <div className="sticky bottom-0 border-t border-hairline bg-ivory p-5 pb-[calc(env(safe-area-inset-bottom)+1rem)] shadow-[0_-10px_20px_rgba(0,0,0,0.04)]">
           <div className="mb-4 flex items-center justify-between text-sm uppercase tracking-[0.2em] text-ink/60">
             <span>Subtotal</span>
             <span className="text-ink">₦{subtotal.toLocaleString()}</span>
