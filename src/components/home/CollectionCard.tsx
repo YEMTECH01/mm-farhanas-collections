@@ -48,7 +48,7 @@ export default function CollectionCard({
     >
       <Link
         href={`/product/${id}`}
-        className="relative aspect-[3/4] overflow-hidden bg-sand"
+        className="relative aspect-[3/4] overflow-hidden rounded-[20px] bg-sand shadow-[0_12px_30px_rgba(11,11,12,0.06)]"
       >
         <img
           src={image}
@@ -58,34 +58,37 @@ export default function CollectionCard({
 
         {/* Wishlist */}
         <button
-          className="absolute top-3 right-3 p-2 bg-white/50 backdrop-blur-md rounded-full text-ink hover:text-gold-deep transition-colors z-10"
+          className="absolute right-3 top-3 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/60 text-ink backdrop-blur-md transition-colors hover:text-gold-deep"
           onClick={(e) => e.preventDefault()}
+          aria-label={`Save ${title}`}
         >
           <Heart size={16} />
         </button>
 
         {/* Quick Add */}
-        <div className="absolute bottom-0 left-0 w-full p-3 translate-y-0 opacity-100 lg:translate-y-full lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-300">
+        <div className="absolute bottom-0 left-0 w-full p-3 opacity-100 transition-all duration-300 lg:translate-y-full lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100">
           <button
             onClick={handleAdd}
-            className="w-full bg-ink/90 backdrop-blur-sm text-ivory text-[10px] uppercase tracking-widest py-3 flex items-center justify-center gap-2 hover:bg-gold-deep transition-colors"
+            className="flex w-full items-center justify-center gap-2 rounded-full bg-ink/90 py-3 text-[10px] font-medium uppercase tracking-[0.2em] text-ivory transition-colors hover:bg-gold-deep"
           >
             <ShoppingBag size={14} /> Quick Add
           </button>
         </div>
       </Link>
 
-      <div className="pt-3 flex flex-col">
-        <span className="label-sm text-ink/50 mb-1">{subtitle}</span>
-        <h3 className="font-serif text-lg text-ink leading-tight mb-1">
+      <div className="flex flex-col pt-3">
+        <span className="mb-1 text-[10px] uppercase tracking-[0.22em] text-ink/50">
+          {subtitle}
+        </span>
+        <h3 className="mb-1 font-serif text-xl leading-tight text-ink sm:text-[1.45rem]">
           {title}
         </h3>
-        <div className="flex justify-between items-center mt-1">
-          <span className="font-sans font-medium text-sm text-gold-deep">
+        <div className="mt-1 flex items-center justify-between gap-2">
+          <span className="font-sans text-sm font-medium text-gold-deep">
             ₦{price.toLocaleString()}
           </span>
           {stock <= 3 && (
-            <span className="text-[10px] text-red-600 font-medium tracking-wide uppercase">
+            <span className="text-[10px] font-medium uppercase tracking-[0.14em] text-red-600">
               Only {stock} left
             </span>
           )}

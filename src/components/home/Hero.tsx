@@ -46,7 +46,7 @@ export default function Hero() {
               Kuje, Abuja • Est. 2026
             </span>
 
-            <h1 className="mb-6 text-ivory leading-[0.94] tracking-[-0.04em]">
+            <h1 className="mb-6 text-4xl text-ivory leading-[0.9] tracking-[-0.05em] sm:text-6xl lg:text-7xl">
               Modest Elegance.
               <br />
               Made for royalty.
@@ -58,16 +58,16 @@ export default function Hero() {
               Morocco, and Turkey.
             </p>
 
-            <div className="flex flex-col gap-4 sm:flex-row">
+            <div className="flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/collections"
-                className="bg-gold-sheen px-8 py-4 text-center text-[11px] font-bold uppercase tracking-[0.22em] text-ink transition-opacity hover:opacity-90"
+                className="rounded-full bg-gold-sheen px-7 py-4 text-center text-[11px] font-bold uppercase tracking-[0.22em] text-ink transition-all duration-200 hover:opacity-90"
               >
                 Shop Now
               </Link>
               <Link
                 href="/about"
-                className="border border-white/25 bg-white/5 px-8 py-4 text-center text-[11px] font-bold uppercase tracking-[0.22em] text-ivory transition-colors hover:bg-white/10"
+                className="rounded-full border border-white/25 bg-white/5 px-7 py-4 text-center text-[11px] font-bold uppercase tracking-[0.22em] text-ivory transition-colors hover:bg-white/10"
               >
                 Our Story
               </Link>
@@ -78,9 +78,9 @@ export default function Hero() {
             initial={{ opacity: 0, x: 28 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-            className="rounded-[24px] bg-[#f6f1e7]/8 p-4 backdrop-blur-[2px]"
+            className="rounded-[26px] border border-white/10 bg-[#f6f1e7]/8 p-4 backdrop-blur-[2px] shadow-[0_20px_50px_rgba(0,0,0,0.18)]"
           >
-            <div className="rounded-[18px] bg-[#f6f1e7]/5 p-4 text-ivory">
+            <div className="rounded-[20px] border border-white/10 bg-[#f6f1e7]/5 p-4 text-ivory">
               <p className="mb-2 text-[10px] uppercase tracking-[0.28em] text-gold/90">
                 Signature edit
               </p>

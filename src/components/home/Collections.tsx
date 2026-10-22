@@ -49,11 +49,11 @@ export default async function Collections({
           </Link>
         </div>
 
-        <div className="mb-16 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+        <div className="mb-16 grid gap-5 sm:grid-cols-2 xl:grid-cols-5">
           {featuredCollections.map((collection) => (
             <div
               key={collection.id}
-              className="group relative overflow-hidden rounded-[24px] border border-[#e6dcc9] bg-white shadow-[0_18px_45px_rgba(11,11,12,0.06)] transition-transform duration-300 hover:-translate-y-1"
+              className="group relative overflow-hidden rounded-[22px] border border-[#e6dcc9] bg-white shadow-[0_18px_45px_rgba(11,11,12,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_rgba(11,11,12,0.08)]"
             >
               <div className="relative h-80 overflow-hidden">
                 <img
@@ -67,7 +67,7 @@ export default async function Collections({
                   <p className="mb-2 text-[10px] uppercase tracking-[0.28em] text-gold">
                     {collection.subtitle}
                   </p>
-                  <h3 className="font-serif text-3xl leading-none">
+                  <h3 className="font-serif text-2xl leading-none sm:text-3xl">
                     {collection.title}
                   </h3>
                   <div className="mt-4 flex items-center justify-between text-[10px] uppercase tracking-[0.25em] text-ivory/80">
