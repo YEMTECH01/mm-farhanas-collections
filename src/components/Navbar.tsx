@@ -65,34 +65,34 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-4 z-50">
+          <div className="z-50 flex items-center gap-2 sm:gap-3">
             {/* Search Link */}
             <Link
               href="/collections"
               aria-label="Search"
-              className="hidden sm:flex text-ink hover:text-gold-deep"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#d9cbb2] bg-[#f6f1e7]/70 text-ink transition-colors hover:border-gold-deep hover:text-gold-deep sm:h-10 sm:w-10"
             >
-              <Search size={20} strokeWidth={1.5} />
+              <Search size={18} strokeWidth={1.8} />
             </Link>
 
             {/* Admin Link */}
             <Link
               href="/admin/login"
               aria-label="Admin"
-              className="hidden sm:flex text-ink hover:text-gold-deep"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#d9cbb2] bg-[#f6f1e7]/70 text-ink transition-colors hover:border-gold-deep hover:text-gold-deep sm:h-10 sm:w-10"
             >
-              <User size={20} strokeWidth={1.5} />
+              <User size={18} strokeWidth={1.8} />
             </Link>
 
             {/* Cart Button */}
             <button
               onClick={toggleCart}
               aria-label="Cart"
-              className="relative text-ink hover:text-gold-deep"
+              className="relative flex h-11 w-11 items-center justify-center rounded-full border border-[#d9cbb2] bg-[#f6f1e7]/70 text-ink transition-colors hover:border-gold-deep hover:text-gold-deep sm:h-10 sm:w-10"
             >
-              <ShoppingBag size={20} strokeWidth={1.5} />
+              <ShoppingBag size={18} strokeWidth={1.8} />
               {items.length > 0 && (
-                <span className="absolute top-0 right-0 bg-gold-deep text-white text-[9px] w-4 h-4 flex items-center justify-center rounded-full translate-x-1 -translate-y-1">
+                <span className="absolute right-1.5 top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-gold-deep text-[9px] font-medium text-white">
                   {items.length}
                 </span>
               )}
@@ -101,9 +101,10 @@ export default function Navbar() {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsOpen(true)}
-              className="lg:hidden text-ink"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#d9cbb2] bg-[#f6f1e7]/70 text-ink transition-colors hover:border-gold-deep hover:text-gold-deep lg:hidden"
+              aria-label="Open menu"
             >
-              <Menu size={24} />
+              <Menu size={20} strokeWidth={1.8} />
             </button>
           </div>
         </div>
@@ -117,7 +118,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[60] flex h-[100dvh] flex-col bg-[#f4efe7] shadow-[0_0_0_1px_rgba(217,203,178,0.8),0_0_22px_rgba(217,203,178,0.45),0_0_46px_rgba(217,203,178,0.24)]"
+            className="fixed inset-0 z-[60] flex h-[100dvh] flex-col overflow-y-auto bg-[#f4efe7] shadow-[0_0_0_1px_rgba(217,203,178,0.8),0_0_22px_rgba(217,203,178,0.45),0_0_46px_rgba(217,203,178,0.24)]"
           >
             <div className="flex items-center justify-between px-4 pb-3 pt-4">
               <div className="flex-1 min-w-0">
@@ -153,7 +154,7 @@ export default function Navbar() {
               </p>
             </div>
 
-            <nav className="flex flex-1 flex-col px-0">
+            <nav className="flex flex-1 flex-col overflow-y-auto px-0">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.name}
